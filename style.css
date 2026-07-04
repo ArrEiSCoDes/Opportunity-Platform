@@ -49,3 +49,32 @@ a {
 hr {
     margin: 20px 0;
 }
+
+/* DASHBOARD SECTION HEADINGS */
+h2 {
+    margin: 20px 0 10px;
+    color: #1f4e79;
+}
+
+/* NAV SECTION SPACING */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* DASHBOARD BUTTON IMPROVEMENT */
+button {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+}
+
+/* CARD FEEL FOR SECTIONS */
+.container {
+    transition: 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.01);
+}
