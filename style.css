@@ -1,80 +1,108 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+/* =========================
+   BODY
+========================= */
 body {
     font-family: Arial, sans-serif;
-    background: #f4f8ff;
+    background: #eef5ff;
     color: #1f1f1f;
+    line-height: 1.6;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 h1 {
-    background: #4da6ff;
+    background: linear-gradient(90deg, #4da6ff, #1f4e79);
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 20px;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* BUTTONS */
-button {
-    background: #4da6ff;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    margin: 8px;
-    border-radius: 8px;
-}
-
-/* LINKS */
-a {
-    text-decoration: none;
-}
-
-/* HR */
-hr {
-    margin: 20px 0;
-}
-
-/* DASHBOARD SECTION HEADINGS */
+/* =========================
+   SUBHEADINGS
+========================= */
 h2 {
     margin: 20px 0 10px;
     color: #1f4e79;
 }
 
-/* NAV SECTION SPACING */
+/* =========================
+   CONTAINER (MAIN LAYOUT BOX)
+========================= */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   NAV SECTION
+========================= */
 .nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* DASHBOARD BUTTON IMPROVEMENT */
+/* =========================
+   BUTTONS
+========================= */
 button {
+    background: #4da6ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+    cursor: pointer;
     width: 100%;
     max-width: 400px;
-    display: block;
 }
 
-/* CARD FEEL FOR SECTIONS */
-.container {
-    transition: 0.3s ease;
+button:hover {
+    background: #1f4e79;
 }
 
+/* =========================
+   LINKS
+========================= */
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul {
+    padding: 15px 25px;
+    line-height: 1.8;
+}
+
+/* =========================
+   OPTIONAL CARD EFFECT
+========================= */
 .container:hover {
     transform: scale(1.01);
+    transition: 0.3s ease;
 }
