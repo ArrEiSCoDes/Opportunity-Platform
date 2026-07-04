@@ -1,43 +1,26 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background: #eef5ff;
     color: #1f1f1f;
-    line-height: 1.6;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 h1 {
     background: linear-gradient(90deg, #4da6ff, #1f4e79);
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
 }
 
-/* =========================
-   SUBHEADINGS
-========================= */
-h2 {
-    margin: 20px 0 10px;
-    color: #1f4e79;
-}
-
-/* =========================
-   CONTAINER (MAIN LAYOUT BOX)
-========================= */
+/* CONTAINER */
 .container {
     max-width: 900px;
     margin: 20px auto;
@@ -47,18 +30,14 @@ h2 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* =========================
-   NAV SECTION
-========================= */
+/* NAV */
 .nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 button {
     background: #4da6ff;
     color: white;
@@ -75,34 +54,14 @@ button:hover {
     background: #1f4e79;
 }
 
-/* =========================
-   LINKS
-========================= */
+/* LINKS */
 a {
     text-decoration: none;
 }
 
-/* =========================
-   HORIZONTAL LINE
-========================= */
+/* HR */
 hr {
     margin: 20px 0;
     border: none;
     border-top: 1px solid #ddd;
-}
-
-/* =========================
-   LISTS
-========================= */
-ul {
-    padding: 15px 25px;
-    line-height: 1.8;
-}
-
-/* =========================
-   OPTIONAL CARD EFFECT
-========================= */
-.container:hover {
-    transform: scale(1.01);
-    transition: 0.3s ease;
 }
