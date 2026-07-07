@@ -158,3 +158,27 @@ body {
     padding: 16px;
   }
 }
+.form-container {
+
+width:100%;
+
+overflow:hidden;
+
+border-radius:15px;
+
+margin-top:20px;
+
+}
+
+
+.form-container iframe {
+
+width:100%;
+
+max-width:100%;
+
+border:none;
+
+border-radius:15px;
+
+}
