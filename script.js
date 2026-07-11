@@ -1,65 +1,67 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-/* =====================================
-   OPPORTUNITY SPOTLIGHT
-===================================== */
+/* ==========================
+OPPORTUNITY SPOTLIGHT
+========================== */
 
 
-const spotlightContainer = document.getElementById(
-    "resource-container"
-);
+const spotlightContainer = 
+document.getElementById("resource-container");
 
 
 const spotlightData = [
 
-    {
-        title: "Career Support",
-        category: "💼 Careers",
-        description:
-        "Explore career pathways, employment resources, and professional growth opportunities.",
-        link: "./career.html",
-        image: "./images/career-support.jpg"
-    },
 
-    {
-        title: "Technology Training",
-        category: "💻 Technology",
-        description:
-        "Learn technology skills, IT training, coding, and cybersecurity resources.",
-        link: "./technology.html",
-        image: "./images/technology-training.jpg"
-    },
+{
+title: "Career Support",
+description:
+"Explore career pathways, job resources, and professional growth opportunities.",
+link: "career.html",
+image: "images/career-support.jpg"
+},
 
-    {
-        title: "Small Business Resources",
-        category: "🚀 Business",
-        description:
-        "Discover tools for business planning, marketing, and entrepreneurship.",
-        link: "./business.html",
-        image: "./images/small-business.jpg"
-    },
 
-    {
-        title: "Healthcare Benefits",
-        category: "💙 Benefits",
-        description:
-        "Find healthcare support, benefits information, and helpful community resources.",
-        link: "./financial.html",
-        image: "./images/healthcare-benefits.jpg"
-    },
+{
+title: "Technology Training",
+description:
+"Learn IT skills, coding, cybersecurity, and digital skills.",
+link: "technology.html",
+image: "images/technology-training.jpg"
+},
 
-    {
-        title: "Housing Resources",
-        category: "🏠 Housing",
-        description:
-        "Explore housing support, stability resources, and assistance programs.",
-        link: "./financial.html",
-        image: "./images/housing-resources.jpg"
-    }
+
+{
+title: "Small Business",
+description:
+"Discover entrepreneurship resources, planning tools, and startup support.",
+link: "business.html",
+image: "images/small-business.jpg"
+},
+
+
+{
+title: "Healthcare Benefits",
+description:
+"Find healthcare support and helpful community resources.",
+link: "financial.html",
+image: "images/healthcare-benefits.jpg"
+},
+
+
+{
+title: "Housing Resources",
+description:
+"Explore housing support and stability resources.",
+link: "financial.html",
+image: "images/housing-resources.jpg"
+}
+
 
 ];
-];
+
+
+
 let spotlightIndex = 0;
 
 
@@ -67,69 +69,75 @@ let spotlightIndex = 0;
 function displaySpotlight(){
 
 
-    if(!spotlightContainer){
-        return;
-    }
+if(!spotlightContainer){
+
+return;
+
+}
 
 
-    spotlightContainer.innerHTML = "";
+
+spotlightContainer.innerHTML = "";
 
 
-    for(
-        let i = spotlightIndex;
-        i < spotlightIndex + 3;
-        i++
-    ){
+
+for(
+let i = spotlightIndex;
+i < spotlightIndex + 3;
+i++
+){
 
 
-        const item =
-        spotlightData[i % spotlightData.length];
+const item =
+spotlightData[i % spotlightData.length];
 
 
-        spotlightContainer.innerHTML += `
 
-        <div class="resource-card">
+spotlightContainer.innerHTML += `
 
-            <a href="${item.link}">
-
-                <img 
-                src="${item.image}"
-                alt="${item.title}"
-                >
+<div class="resource-card">
 
 
-                <div class="resource-info">
-
-                    <h3>
-                    ${item.title}
-                    </h3>
+<a href="${item.link}">
 
 
-                    <p>
-                    ${item.category}
-                    </p>
+<img 
+src="${item.image}"
+alt="${item.title}"
+>
 
 
-                    <p>
-                    ${item.description}
-                    </p>
+
+<div class="resource-info">
 
 
-                    <span class="spotlight-button">
-                    Explore →
-                    </span>
+<h3>
+${item.title}
+</h3>
 
 
-                </div>
-
-            </a>
-
-        </div>
-
-        `;
+<p>
+${item.description}
+</p>
 
 
-    }
+<span class="spotlight-button">
+Explore
+</span>
+
+
+</div>
+
+
+</a>
+
+
+</div>
+
+
+`;
+
+}
 
 
 }
@@ -140,11 +148,6 @@ displaySpotlight();
 
 
 
-
-
-/* =====================================
-   SPOTLIGHT ARROWS
-===================================== */
 
 
 const nextButton =
@@ -186,6 +189,7 @@ displaySpotlight();
 
 
 
+
 if(previousButton){
 
 
@@ -214,9 +218,11 @@ displaySpotlight();
 
 
 }
-/* =====================================
-   RESOURCE SEARCH
-===================================== */
+
+
+/* ==========================
+RESOURCE SEARCH
+========================== */
 
 
 const searchInput =
@@ -230,88 +236,86 @@ document.getElementById("searchButton");
 
 const searchDatabase = [
 
+
 {
-    terms:[
-        "career",
-        "job",
-        "employment",
-        "work"
-    ],
-    page:"career.html"
+terms:[
+"career",
+"job",
+"employment",
+"work"
+],
+page:"career.html"
 },
 
 
+
 {
-    terms:[
-        "resume",
-        "cv",
-        "interview",
-        "application"
-    ],
-    page:"resume.html"
+terms:[
+"resume",
+"cv",
+"interview",
+"application"
+],
+page:"resume.html"
 },
 
 
+
 {
-    terms:[
-        "training",
-        "class",
-        "course",
-        "certificate",
-        "education"
-    ],
-    page:"training.html"
+terms:[
+"training",
+"class",
+"certificate",
+"education",
+"school"
+],
+page:"training.html"
 },
 
 
+
 {
-    terms:[
-        "technology",
-        "computer",
-        "coding",
-        "it",
-        "cybersecurity"
-    ],
-    page:"technology.html"
+terms:[
+"technology",
+"computer",
+"IT",
+"coding",
+"cybersecurity"
+],
+page:"technology.html"
 },
 
 
+
 {
-    terms:[
-        "ai",
-        "artificial intelligence"
-    ],
-    page:"ai-skills.html"
+terms:[
+"ai",
+"artificial intelligence"
+],
+page:"ai-skills.html"
 },
 
 
+
 {
-    terms:[
-        "money",
-        "finance",
-        "budget",
-        "credit"
-    ],
-    page:"financial.html"
+terms:[
+"finance",
+"money",
+"budget",
+"credit"
+],
+page:"financial.html"
 },
 
 
-{
-    terms:[
-        "business",
-        "startup",
-        "entrepreneur"
-    ],
-    page:"business.html"
-},
-
 
 {
-    terms:[
-        "leadership",
-        "management"
-    ],
-    page:"leadership.html"
+terms:[
+"business",
+"entrepreneur",
+"startup"
+],
+page:"business.html"
 }
 
 
@@ -320,19 +324,12 @@ const searchDatabase = [
 
 
 
+
 function searchResources(){
 
 
-if(!searchInput){
-    return;
-}
-
-
-
 const searchValue =
-searchInput.value
-.toLowerCase()
-.trim();
+searchInput.value.toLowerCase().trim();
 
 
 
@@ -340,7 +337,7 @@ if(searchValue === ""){
 
 
 alert(
-"Please enter something to search."
+"Please enter a resource to search."
 );
 
 
@@ -351,19 +348,20 @@ return;
 
 
 
-
 const result =
 searchDatabase.find(resource =>
 
 
 resource.terms.some(term =>
 
+
 searchValue.includes(term)
+
 
 )
 
-);
 
+);
 
 
 
@@ -387,7 +385,9 @@ alert(
 }
 
 
+
 }
+
 
 
 
@@ -415,7 +415,9 @@ function(event){
 
 if(event.key === "Enter"){
 
+
 searchResources();
+
 
 }
 
@@ -431,10 +433,9 @@ searchResources();
 
 
 
-/* =====================================
-   OPPORTUNITY AI ASSISTANT
-===================================== */
-
+/* ==========================
+AI ASSISTANT
+========================== */
 
 
 const askAI =
@@ -454,46 +455,31 @@ document.getElementById("aiResponse");
 if(askAI){
 
 
-
 askAI.addEventListener(
 "click",
 function(){
 
 
 
-if(!aiQuestion || !aiResponse){
-
-return;
-
-}
-
-
-
 const question =
-aiQuestion.value
-.toLowerCase();
-
+aiQuestion.value.toLowerCase();
 
 
 
 
 if(
-question.includes("job")
-||
+question.includes("job") ||
 question.includes("career")
 ){
 
 
-aiResponse.innerHTML = `
+aiResponse.innerHTML =
 
-Start with Career Discovery.
-
-<br><br>
-
-<a href="career.html">
-Explore Careers →
-</a>
-
+`
+<p>
+Start with Career Resources to explore job pathways,
+employment tools, and opportunities.
+</p>
 `;
 
 
@@ -502,25 +488,22 @@ Explore Careers →
 
 
 
+
 else if(
 
-question.includes("resume")
-||
+question.includes("resume") ||
 question.includes("interview")
 
 ){
 
 
-aiResponse.innerHTML = `
+aiResponse.innerHTML =
 
-Resume Support can help improve your applications.
-
-<br><br>
-
-<a href="resume.html">
-Resume Help →
-</a>
-
+`
+<p>
+Resume Support can help improve applications,
+resumes, and interview preparation.
+</p>
 `;
 
 
@@ -531,53 +514,40 @@ Resume Help →
 
 else if(
 
-question.includes("learn")
-||
-question.includes("training")
-||
-question.includes("course")
+question.includes("learn") ||
+question.includes("training") ||
+question.includes("school")
 
 ){
 
 
-aiResponse.innerHTML = `
+aiResponse.innerHTML =
 
-Explore training programs and certifications.
-
-<br><br>
-
-<a href="training.html">
-Training Resources →
-</a>
-
+`
+<p>
+Explore Training and Certifications to build new skills.
+</p>
 `;
 
 
 
 }
-
 
 
 
 else if(
 
 question.includes("business")
-||
-question.includes("startup")
 
 ){
 
 
-aiResponse.innerHTML = `
+aiResponse.innerHTML =
 
-Explore entrepreneurship resources.
-
-<br><br>
-
-<a href="business.html">
-Business Resources →
-</a>
-
+`
+<p>
+Explore Business Resources for entrepreneurship support.
+</p>
 `;
 
 
@@ -589,26 +559,20 @@ Business Resources →
 else{
 
 
-aiResponse.innerHTML = `
+aiResponse.innerHTML =
 
+`
+<p>
 Try asking:
-
-<br><br>
-
-• Help me find a job
-
 <br>
-
-• I need resume help
-
+"I need help finding a job"
 <br>
-
-• I want training
-
+"I need resume help"
 <br>
-
-• I want to start a business
-
+"I want training"
+<br>
+"I want to start a business"
+</p>
 `;
 
 
@@ -617,16 +581,11 @@ Try asking:
 
 
 
-
-}
-
-
-);
+});
 
 
 }
 
 
 
-
-});   
+});
