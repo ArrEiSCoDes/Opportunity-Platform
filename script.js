@@ -434,7 +434,7 @@ searchResources();
 
 
 /* ==========================
-AI ASSISTANT
+OPPORTUNITY AI ASSISTANT
 ========================== */
 
 
@@ -451,7 +451,6 @@ document.getElementById("aiResponse");
 
 
 
-
 if(askAI){
 
 
@@ -460,16 +459,41 @@ askAI.addEventListener(
 function(){
 
 
-
 const question =
-aiQuestion.value.toLowerCase();
+aiQuestion.value.toLowerCase().trim();
 
 
 
+if(question === ""){
+
+
+aiResponse.innerHTML =
+
+`
+<p>
+Please ask me a question about careers, training,
+resumes, technology, business, or resources.
+</p>
+`;
+
+return;
+
+}
+
+
+
+
+/* CAREER QUESTIONS */
 
 if(
+
 question.includes("job") ||
-question.includes("career")
+question.includes("career") ||
+question.includes("work") ||
+question.includes("employment") ||
+question.includes("hire") ||
+question.includes("remote")
+
 ){
 
 
@@ -477,22 +501,31 @@ aiResponse.innerHTML =
 
 `
 <p>
-Start with Career Resources to explore job pathways,
-employment tools, and opportunities.
+💼 Career Support can help you explore job pathways,
+employment resources, and career opportunities.
 </p>
+
+<a href="career.html">
+Go to Career Resources
+</a>
+
 `;
-
-
 
 }
 
 
+
+
+
+/* RESUME QUESTIONS */
 
 
 else if(
 
 question.includes("resume") ||
-question.includes("interview")
+question.includes("cv") ||
+question.includes("interview") ||
+question.includes("application")
 
 ){
 
@@ -501,22 +534,33 @@ aiResponse.innerHTML =
 
 `
 <p>
-Resume Support can help improve applications,
-resumes, and interview preparation.
+📝 Resume Support can help improve your resume,
+applications, and interview preparation.
 </p>
+
+<a href="resume.html">
+Go to Resume Support
+</a>
+
 `;
-
-
 
 }
 
+
+
+
+
+/* TRAINING QUESTIONS */
 
 
 else if(
 
 question.includes("learn") ||
 question.includes("training") ||
-question.includes("school")
+question.includes("class") ||
+question.includes("certificate") ||
+question.includes("school") ||
+question.includes("course")
 
 ){
 
@@ -525,19 +569,32 @@ aiResponse.innerHTML =
 
 `
 <p>
-Explore Training and Certifications to build new skills.
+🎓 Training resources can help you build skills
+and earn certifications.
 </p>
+
+<a href="training.html">
+Explore Training
+</a>
+
 `;
-
-
 
 }
 
+
+
+
+
+/* TECHNOLOGY QUESTIONS */
 
 
 else if(
 
-question.includes("business")
+question.includes("computer") ||
+question.includes("technology") ||
+question.includes("coding") ||
+question.includes("cyber") ||
+question.includes("IT")
 
 ){
 
@@ -546,14 +603,89 @@ aiResponse.innerHTML =
 
 `
 <p>
-Explore Business Resources for entrepreneurship support.
+💻 Technology resources can help you develop
+digital skills, IT knowledge, and cybersecurity skills.
 </p>
+
+<a href="technology.html">
+Explore Technology Skills
+</a>
+
 `;
-
-
 
 }
 
+
+
+
+
+/* BUSINESS QUESTIONS */
+
+
+else if(
+
+question.includes("business") ||
+question.includes("startup") ||
+question.includes("entrepreneur") ||
+question.includes("sell")
+
+){
+
+
+aiResponse.innerHTML =
+
+`
+<p>
+🚀 Business resources can help with entrepreneurship,
+planning, and growing ideas.
+</p>
+
+<a href="business.html">
+Explore Business Resources
+</a>
+
+`;
+
+}
+
+
+
+
+
+/* FINANCIAL QUESTIONS */
+
+
+else if(
+
+question.includes("money") ||
+question.includes("finance") ||
+question.includes("budget") ||
+question.includes("credit")
+
+){
+
+
+aiResponse.innerHTML =
+
+`
+<p>
+💰 Financial resources can help with money management,
+planning, and financial growth.
+</p>
+
+<a href="financial.html">
+Explore Financial Resources
+</a>
+
+`;
+
+}
+
+
+
+
+
+/* GENERAL QUESTIONS */
 
 
 else{
@@ -563,29 +695,45 @@ aiResponse.innerHTML =
 
 `
 <p>
-Try asking:
-<br>
-"I need help finding a job"
-<br>
-"I need resume help"
-<br>
-"I want training"
-<br>
-"I want to start a business"
+🤖 I can help you find resources for:
 </p>
+
+<ul>
+
+<li>💼 Jobs and careers</li>
+
+<li>📝 Resumes and interviews</li>
+
+<li>🎓 Training and certifications</li>
+
+<li>💻 Technology skills</li>
+
+<li>🚀 Starting a business</li>
+
+<li>💰 Financial growth</li>
+
+</ul>
+
+<p>
+Try asking:
+<br><br>
+
+"What jobs are available?"
+<br>
+"How can I improve my resume?"
+<br>
+"What training programs can I take?"
+<br>
+"How do I start a business?"
+
+</p>
+
 `;
 
-
-
 }
-
 
 
 });
 
 
 }
-
-
-
-});
