@@ -1,289 +1,241 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
 
-const resources = [
+/* =========================
+SPOTLIGHT CARDS
+========================= */
+
+
+const spotlightContainer =
+document.getElementById("resource-container");
+
+
+const spotlightData = [
 
 {
-title:"Free Technology Training",
-category:"Technology Skills",
-description:"Explore free IT, cybersecurity, and digital skill training programs.",
-image:"https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-link:"technology.html"
-},
-
-
-{
-title:"Free Career Certifications",
+title:"Google Career Certificates",
 category:"Training",
-description:"Find professional certificates that can help build career skills.",
-image:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655",
+description:"Build career-ready skills with professional certificates.",
 link:"training.html"
 },
 
-
 {
-title:"AI Learning Resources",
-category:"Artificial Intelligence",
-description:"Discover beginner-friendly AI tools and learning opportunities.",
-image:"https://images.unsplash.com/photo-1677442136019-21780ecad995",
-link:"ai-skills.html"
+title:"Resume Support",
+category:"Career",
+description:"Improve resumes and prepare for job opportunities.",
+link:"resume.html"
 },
 
-
 {
-title:"Entrepreneurship Resources",
-category:"Business",
-description:"Learn business planning, marketing, and startup skills.",
-image:"https://images.unsplash.com/photo-1556761175-b413da4baf72",
-link:"business.html"
+title:"Technology Skills",
+category:"Technology",
+description:"Learn digital skills, IT, and cybersecurity.",
+link:"technology.html"
 }
-
 
 ];
 
 
 
-const container =
-document.getElementById("resource-container");
+if(spotlightContainer){
 
 
-
-let current = 0;
-
+spotlightData.forEach(item=>{
 
 
-function displayResources(){
+spotlightContainer.innerHTML += `
 
-
-container.innerHTML="";
-
-
-for(
-let i=current;
-i<current+3 && i<resources.length;
-i++
-){
-
-
-let resource = resources[i];
-
-
-let card=document.createElement("div");
-
-card.className="resource-card";
-
-
-card.innerHTML=`
-
-<a href="${resource.link}">
-
-<img src="${resource.image}">
+<div class="resource-card">
 
 
 <div class="resource-info">
 
-<h3>${resource.title}</h3>
+
+<h3>
+${item.title}
+</h3>
+
 
 <p>
-${resource.category}
+${item.category}
 </p>
 
+
 <p>
-${resource.description}
+${item.description}
 </p>
+
+
+<a class="btn" href="${item.link}">
+Explore
+</a>
+
 
 </div>
 
-</a>
+
+</div>
 
 `;
 
-
-container.appendChild(card);
-
-
-}
-
-
-}
-
-
-
-displayResources();
-
-
-
-
-
-document
-.getElementById("nextBtn")
-?.addEventListener("click",function(){
-
-
-current++;
-
-if(current >= resources.length){
-
-current=0;
-
-}
-
-
-displayResources();
-
-
 });
 
 
-
-
-
-document
-.getElementById("prevBtn")
-?.addEventListener("click",function(){
-
-
-current--;
-
-if(current < 0){
-
-current=resources.length-1;
-
 }
 
 
-displayResources();
-
-
-});
 
 
 
 
-
-
-// RESOURCE SEARCH FEATURE
-
-
-const searchButton =
-document.getElementById("searchButton");
+/* =========================
+SEARCH
+========================= */
 
 
 const searchInput =
 document.getElementById("resourceSearch");
 
 
-
-searchButton?.addEventListener(
-"click",
-function(){
-
-
-const searchTerm =
-searchInput.value.toLowerCase().trim();
+const searchButton =
+document.getElementById("searchButton");
 
 
 
-const results =
-resources.filter(resource =>
+function runSearch(){
 
-resource.title.toLowerCase().includes(searchTerm) ||
 
-resource.category.toLowerCase().includes(searchTerm) ||
+let term =
+searchInput.value.toLowerCase();
 
-resource.description.toLowerCase().includes(searchTerm)
 
+
+if(term.trim()===""){
+
+alert("Please enter a search term");
+
+return;
+
+}
+
+
+
+let results = [
+
+{
+name:"Career Discovery",
+page:"career.html"
+},
+
+{
+name:"Resume Support",
+page:"resume.html"
+},
+
+{
+name:"Training Certifications",
+page:"training.html"
+},
+
+{
+name:"Technology Skills",
+page:"technology.html"
+},
+
+{
+name:"AI Skills",
+page:"ai-skills.html"
+},
+
+{
+name:"Business Resources",
+page:"business.html"
+}
+
+];
+
+
+
+let found =
+results.find(item =>
+item.name.toLowerCase().includes(term)
 );
 
 
 
-container.innerHTML = "";
+if(found){
 
+window.location.href = found.page;
 
+}
 
-if(results.length === 0){
+else{
 
+alert(
+"No matching resource found. Try career, resume, training, technology, AI, or business."
+);
 
-container.innerHTML = `
-
-<div class="resource-card">
-
-<div class="resource-info"
-style="transform:translateY(0);">
-
-<h3>
-No Resources Found
-</h3>
-
-<p>
-Try searching:
-career, training, technology, AI, business
-</p>
-
-
-</div>
-
-</div>
-
-`;
-
-
-return;
+}
 
 
 }
 
 
 
-results.forEach(resource => {
+if(searchButton){
+
+searchButton.addEventListener(
+"click",
+runSearch
+);
+
+}
 
 
 
-let card =
-document.createElement("div");
+if(searchInput){
 
-card.className="resource-card";
+searchInput.addEventListener(
+"keypress",
+function(event){
 
+if(event.key==="Enter"){
 
+runSearch();
 
-card.innerHTML = `
+}
 
-<a href="${resource.link}">
+});
 
-<img src="${resource.image}">
-
-
-<div class="resource-info"
-style="transform:translateY(0);">
-
-
-<h3>
-${resource.title}
-</h3>
+}
 
 
-<p>
-${resource.category}
-</p>
 
 
-<p>
-${resource.description}
-</p>
 
 
-</div>
-
-</a>
-
-`;
+/* =========================
+OPPORTUNITY COACH
+========================= */
 
 
-container.appendChild(card);
+const coachButtons =
+document.querySelectorAll(".coach .btn");
+
+
+
+coachButtons.forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+});
 
 
 
 });
+
 
 
 });
