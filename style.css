@@ -510,3 +510,29 @@ flex-direction:column;
 body {
     background:red !important;
 }
+.search-box{
+
+display:flex;
+gap:15px;
+margin-top:20px;
+
+}
+
+
+.search-box input{
+
+flex:1;
+
+}
+
+
+
+@media(max-width:700px){
+
+.search-box{
+
+flex-direction:column;
+
+}
+
+}
