@@ -1,5 +1,3 @@
-e
-
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -217,7 +215,6 @@ displaySpotlight();
 
 
 }
-
 /* =====================================
    RESOURCE SEARCH
 ===================================== */
@@ -633,4 +630,4 @@ Try asking:
 
 
 
-});
+});   
