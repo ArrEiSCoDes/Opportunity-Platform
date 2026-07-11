@@ -98,17 +98,33 @@ spotlightData[i % spotlightData.length];
 
 
 spotlightContainer.innerHTML += `
-
 <div class="resource-card">
 
+  <a href="${item.link}">
 
-<a href="${item.link}">
+    <img
+      src="${item.image}"
+      alt="${item.title}"
+    >
 
+    <div class="resource-info">
 
-<img
-src="${item.image}"
-alt="${item.title}"
->
+      <h3>${item.title}</h3>
+
+      <p>${item.category}</p>
+
+      <p>${item.description}</p>
+
+      <span class="spotlight-button">
+        Explore →
+      </span>
+
+    </div>
+
+  </a>
+
+</div>
+`;
 
 
 
