@@ -477,3 +477,122 @@ searchResources();
 
 
 });
+/* ==========================
+   OPPORTUNITY AI ASSISTANT
+========================== */
+
+
+const askAI =
+document.getElementById("askAI");
+
+
+const aiQuestion =
+document.getElementById("aiQuestion");
+
+
+const aiResponse =
+document.getElementById("aiResponse");
+
+
+
+if(askAI){
+
+
+askAI.addEventListener("click", function(){
+
+
+const question =
+aiQuestion.value.toLowerCase();
+
+
+
+if(question.includes("job") || question.includes("career")){
+
+
+aiResponse.innerHTML =
+`
+I recommend starting with Career Discovery.
+
+<a href="career.html">
+Explore Careers →
+</a>
+`;
+
+}
+
+
+
+else if(question.includes("resume") || question.includes("interview")){
+
+
+aiResponse.innerHTML =
+`
+Resume Support can help improve applications and interviews.
+
+<a href="resume.html">
+Resume Help →
+</a>
+`;
+
+}
+
+
+
+
+else if(question.includes("learn") || question.includes("training")){
+
+
+aiResponse.innerHTML =
+`
+Explore training programs and certifications.
+
+<a href="training.html">
+Training Resources →
+</a>
+`;
+
+}
+
+
+
+
+else if(question.includes("business")){
+
+
+aiResponse.innerHTML =
+`
+Explore entrepreneurship resources.
+
+<a href="business.html">
+Business Resources →
+</a>
+`;
+
+}
+
+
+
+else{
+
+
+aiResponse.innerHTML =
+`
+Try asking:
+<br>
+"Help me find a job"
+<br>
+"I need resume help"
+<br>
+"I want training"
+<br>
+"I want to start a business"
+`;
+
+}
+
+
+
+});
+
+
+}
