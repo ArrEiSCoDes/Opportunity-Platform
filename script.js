@@ -14,53 +14,51 @@ const spotlightContainer = document.getElementById(
 const spotlightData = [
 
 {
-    title: "Google Career Certificates",
-    category: "🎓 Training",
-    description:
-    "Build career-ready skills through professional certificates and workforce programs.",
-    link: "training.html",
-    image: "images/training.jpg"
+title: "Career Support",
+category: "💼 Careers",
+description:
+"Explore career pathways, employment resources, and professional growth opportunities.",
+link: "career.html",
+image: "images/career-support.png"
 },
 
 {
-    title: "Resume Support",
-    category: "📝 Resume Help",
-    description:
-    "Create stronger resumes, improve applications, and prepare for interviews.",
-    link: "resume.html",
-    image: "images/resume.jpg"
+title: "Technology Training",
+category: "💻 Technology",
+description:
+"Learn technology skills, IT training, coding, and cybersecurity resources.",
+link: "technology.html",
+image: "images/technology-training.png"
 },
 
 {
-    title: "Technology Skills",
-    category: "💻 Technology",
-    description:
-    "Learn IT, cybersecurity, coding, and digital skills.",
-    link: "technology.html",
-    image: "images/technology.jpg"
+title: "Small Business Resources",
+category: "🚀 Entrepreneurship",
+description:
+"Discover tools for business planning, marketing, and entrepreneurship.",
+link: "business.html",
+image: "images/small-business.png"
 },
 
 {
-    title: "Entrepreneurship Resources",
-    category: "🚀 Business",
-    description:
-    "Learn business planning, marketing, and startup skills.",
-    link: "business.html",
-    image: "images/business.jpg"
+title: "Healthcare Benefits",
+category: "💙 Resources",
+description:
+"Find helpful benefit and support resources.",
+link: "financial.html",
+image: "images/healthcare-benefits.png"
 },
 
 {
-    title: "Financial Growth",
-    category: "💰 Finance",
-    description:
-    "Explore budgeting, financial literacy, and money management resources.",
-    link: "financial.html",
-    image: "images/finance.jpg"
+title: "Housing Resources",
+category: "🏠 Community Support",
+description:
+"Explore housing and stability resources.",
+link: "financial.html",
+image: "images/housing-resources.png"
 }
 
 ];
-
-
 let spotlightIndex = 0;
 
 
