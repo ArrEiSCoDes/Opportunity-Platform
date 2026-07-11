@@ -1,116 +1,155 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-/* ============================
+/* =================================
    OPPORTUNITY SPOTLIGHT
-============================ */
+================================= */
 
 
-const spotlightContainer = document.getElementById("resource-container");
+const spotlightContainer =
+document.getElementById("resource-container");
+
 
 
 const spotlightData = [
 
-    {
-        title: "Google Career Certificates",
-        category: "🎓 Training",
-        description: "Build career-ready skills through professional certificates and learning programs.",
-        link: "./training.html",
-        image: "./images/training.jpg"
-    },
+{
+title: "Google Career Certificates",
+category: "🎓 Training",
+description: "Build career-ready skills through professional certificates and workforce programs.",
+link: "./training.html",
+image: "./images/training.jpg"
+},
 
-    {
-        title: "Resume Support",
-        category: "📝 Career",
-        description: "Create stronger resumes and prepare for interviews and applications.",
-        link: "./resume.html",
-        image: "./images/resume.jpg"
-    },
 
-    {
-        title: "Technology Skills",
-        category: "💻 Technology",
-        description: "Learn IT, cybersecurity, coding, and digital skills.",
-        link: "./technology.html",
-        image: "./images/technology.jpg"
-    },
+{
+title: "Resume Support",
+category: "📝 Career",
+description: "Create stronger resumes, improve applications, and prepare for interviews.",
+link: "./resume.html",
+image: "./images/resume.jpg"
+},
 
-    {
-        title: "Entrepreneurship",
-        category: "🚀 Business",
-        description: "Learn business planning, marketing, and startup skills.",
-        link: "./business.html",
-        image: "./images/business.jpg"
-    }
+
+{
+title: "Technology Skills",
+category: "💻 Technology",
+description: "Learn IT, cybersecurity, coding, and digital skills.",
+link: "./technology.html",
+image: "./images/technology.jpg"
+},
+
+
+{
+title: "Entrepreneurship Resources",
+category: "🚀 Business",
+description: "Learn business planning, marketing, and startup skills.",
+link: "./business.html",
+image: "./images/business.jpg"
+},
+
+
+{
+title: "Financial Growth",
+category: "💰 Finance",
+description: "Explore financial literacy, budgeting, and money management resources.",
+link: "./financial.html",
+image: "./images/finance.jpg"
+}
+
 
 ];
 
 
-let spotlightPosition = 0;
+
+
+let spotlightIndex = 0;
 
 
 
-function displaySpotlight() {
 
 
-    if (!spotlightContainer) {
-        return;
-    }
+function displaySpotlight(){
 
 
-    spotlightContainer.innerHTML = "";
+if(!spotlightContainer){
 
-
-    for (
-        let i = spotlightPosition;
-        i < spotlightPosition + 3;
-        i++
-    ) {
-
-
-        const item = spotlightData[i % spotlightData.length];
-
-
-        spotlightContainer.innerHTML += `
-
-        <div class="resource-card">
-
-            <a href="${item.link}">
-
-                <img 
-                src="${item.image}" 
-                alt="${item.title}"
-                >
-
-                <div class="resource-info">
-
-                    <h3>
-                    ${item.title}
-                    </h3>
-
-                    <p>
-                    ${item.category}
-                    </p>
-
-                    <p>
-                    ${item.description}
-                    </p>
-
-                    <span class="btn">
-                    Explore →
-                    </span>
-
-                </div>
-
-            </a>
-
-        </div>
-
-        `;
-
-    }
+return;
 
 }
+
+
+
+spotlightContainer.innerHTML = "";
+
+
+
+
+for(
+let i = spotlightIndex;
+i < spotlightIndex + 3;
+i++
+){
+
+
+const item =
+spotlightData[i % spotlightData.length];
+
+
+
+spotlightContainer.innerHTML += `
+
+<div class="resource-card">
+
+
+<a href="${item.link}">
+
+
+<img
+src="${item.image}"
+alt="${item.title}"
+>
+
+
+
+<div class="resource-info">
+
+
+<h3>
+${item.title}
+</h3>
+
+
+<p>
+${item.category}
+</p>
+
+
+<p>
+${item.description}
+</p>
+
+
+<span class="spotlight-button">
+Explore →
+</span>
+
+
+</div>
+
+
+</a>
+
+
+</div>
+
+`;
+
+}
+
+
+}
+
 
 
 
@@ -120,59 +159,48 @@ displaySpotlight();
 
 
 
-const nextButton = document.getElementById("nextBtn");
-
-const previousButton = document.getElementById("prevBtn");
 
 
-
-if (nextButton) {
-
-
-    nextButton.addEventListener("click", function () {
+/* =================================
+   SPOTLIGHT BUTTONS
+================================= */
 
 
-        spotlightPosition++;
+const nextButton =
+document.getElementById("nextBtn");
 
 
-        if (spotlightPosition >= spotlightData.length) {
-
-            spotlightPosition = 0;
-
-        }
+const previousButton =
+document.getElementById("prevBtn");
 
 
-        displaySpotlight();
 
 
-    });
 
+if(nextButton){
+
+
+nextButton.addEventListener(
+"click",
+function(){
+
+
+spotlightIndex++;
+
+
+if(
+spotlightIndex >= spotlightData.length
+){
+
+spotlightIndex = 0;
 
 }
 
 
+displaySpotlight();
 
 
-if (previousButton) {
-
-
-    previousButton.addEventListener("click", function () {
-
-
-        spotlightPosition--;
-
-
-        if (spotlightPosition < 0) {
-
-            spotlightPosition = spotlightData.length - 1;
-
-        }
-
-
-        displaySpotlight();
-
-
-    });
+});
 
 
 }
@@ -182,10 +210,46 @@ if (previousButton) {
 
 
 
+if(previousButton){
 
-/* ============================
+
+previousButton.addEventListener(
+"click",
+function(){
+
+
+spotlightIndex--;
+
+
+if(
+spotlightIndex < 0
+){
+
+spotlightIndex =
+spotlightData.length - 1;
+
+}
+
+
+displaySpotlight();
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =================================
    RESOURCE SEARCH
-============================ */
+================================= */
 
 
 const searchInput =
@@ -197,42 +261,95 @@ document.getElementById("searchButton");
 
 
 
-const searchResources = [
 
-    {
-        keywords:["career","job","employment"],
-        page:"career.html"
-    },
 
-    {
-        keywords:["resume","cv","interview"],
-        page:"resume.html"
-    },
+const searchDatabase = [
 
-    {
-        keywords:["training","certificate","education"],
-        page:"training.html"
-    },
 
-    {
-        keywords:["technology","computer","coding","cybersecurity"],
-        page:"technology.html"
-    },
+{
+terms:[
+"career",
+"job",
+"employment",
+"work"
+],
+page:"career.html"
+},
 
-    {
-        keywords:["ai","artificial intelligence"],
-        page:"ai-skills.html"
-    },
 
-    {
-        keywords:["finance","money","budget","credit"],
-        page:"financial.html"
-    },
+{
+terms:[
+"resume",
+"cv",
+"interview",
+"application"
+],
+page:"resume.html"
+},
 
-    {
-        keywords:["business","entrepreneur","startup"],
-        page:"business.html"
-    }
+
+{
+terms:[
+"training",
+"class",
+"certificate",
+"education",
+"school"
+],
+page:"training.html"
+},
+
+
+{
+terms:[
+"technology",
+"computer",
+"IT",
+"coding",
+"cybersecurity"
+],
+page:"technology.html"
+},
+
+
+{
+terms:[
+"ai",
+"artificial intelligence"
+],
+page:"ai-skills.html"
+},
+
+
+{
+terms:[
+"finance",
+"money",
+"budget",
+"credit"
+],
+page:"financial.html"
+},
+
+
+{
+terms:[
+"business",
+"entrepreneur",
+"startup"
+],
+page:"business.html"
+},
+
+
+{
+terms:[
+"leadership",
+"management"
+],
+page:"leadership.html"
+}
+
 
 ];
 
@@ -240,56 +357,29 @@ const searchResources = [
 
 
 
-function runSearch() {
 
 
-    const searchTerm =
-    searchInput.value.toLowerCase().trim();
+function searchResources(){
 
 
 
-    if (searchTerm === "") {
-
-        alert("Please enter a search term.");
-
-        return;
-
-    }
+const searchValue =
+searchInput.value
+.toLowerCase()
+.trim();
 
 
 
 
-    const result =
-    searchResources.find(resource =>
+if(searchValue === ""){
 
 
-        resource.keywords.some(keyword =>
-
-            searchTerm.includes(keyword)
-
-        )
-
-    );
+alert(
+"Please enter a resource to search."
+);
 
 
-
-
-
-    if (result) {
-
-
-        window.location.href = result.page;
-
-
-    } else {
-
-
-        alert(
-        "No matching resource found. Try career, resume, training, technology, AI, finance, or business."
-        );
-
-
-    }
+return;
 
 
 }
@@ -298,13 +388,42 @@ function runSearch() {
 
 
 
-if (searchButton) {
+const result =
+searchDatabase.find(resource =>
 
 
-    searchButton.addEventListener(
-        "click",
-        runSearch
-    );
+resource.terms.some(term =>
+
+searchValue.includes(term)
+
+)
+
+);
+
+
+
+
+
+
+if(result){
+
+
+window.location.href =
+result.page;
+
+
+}
+
+else{
+
+
+alert(
+"No matching resource found. Try career, resume, training, technology, AI, finance, or business."
+);
+
+
+}
+
 
 
 }
@@ -312,26 +431,48 @@ if (searchButton) {
 
 
 
-if (searchInput) {
 
 
-    searchInput.addEventListener(
-        "keypress",
-        function(event){
+
+if(searchButton){
 
 
-            if(event.key === "Enter") {
-
-                runSearch();
-
-            }
-
-
-        }
-    );
+searchButton.addEventListener(
+"click",
+searchResources
+);
 
 
 }
+
+
+
+
+
+
+if(searchInput){
+
+
+searchInput.addEventListener(
+"keypress",
+function(event){
+
+
+if(event.key === "Enter"){
+
+
+searchResources();
+
+
+}
+
+
+});
+
+
+}
+
+
 
 
 
