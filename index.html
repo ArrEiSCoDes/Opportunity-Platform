@@ -5,6 +5,7 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Opportunity Platform</title>
@@ -26,13 +27,12 @@ Career resources, skill development, certifications, and growth opportunities de
 </p>
 
 
-<button id="startButton" class="btn">
+<a href="#resources" class="btn">
 Start Exploring
-</button>
+</a>
 
 
 </header>
-
 
 
 
@@ -42,13 +42,9 @@ Start Exploring
 
 
 
-
-
 <section class="card">
 
-
 <h2>Welcome to Opportunity Platform</h2>
-
 
 <p>
 Opportunity Platform connects learners, job seekers, and entrepreneurs with resources that support career growth, education, and professional development.
@@ -59,7 +55,6 @@ Opportunity Platform connects learners, job seekers, and entrepreneurs with reso
 Explore training programs, certifications, career tools, and resources designed to help you move forward.
 </p>
 
-
 </section>
 
 
@@ -68,9 +63,7 @@ Explore training programs, certifications, career tools, and resources designed 
 
 
 
-
-
-<section class="card resource-spotlight">
+<section class="card resource-spotlight" id="resources">
 
 
 <h2>🌟 Opportunity Spotlight</h2>
@@ -85,19 +78,21 @@ Featured resources, programs, certifications, and opportunities updated regularl
 <div class="resource-carousel">
 
 
-<button id="prevBtn" class="carousel-btn">
+<button class="carousel-btn" id="prevBtn">
 ❮
 </button>
 
 
 
-<div id="resource-container" class="resource-track">
-
+<div 
+id="resource-container"
+class="resource-track">
 </div>
 
 
 
-<button id="nextBtn" class="carousel-btn">
+
+<button class="carousel-btn" id="nextBtn">
 ❯
 </button>
 
@@ -106,9 +101,7 @@ Featured resources, programs, certifications, and opportunities updated regularl
 </div>
 
 
-
 </section>
-
 
 
 
@@ -124,20 +117,18 @@ Featured resources, programs, certifications, and opportunities updated regularl
 
 
 <p>
-Search through career pathways, skills, and opportunities.
+Search career pathways, skills, and opportunities.
 </p>
 
 
 <input 
-id="resourceSearch"
 type="text"
+id="resourceSearch"
 placeholder="Search resources..."
 >
 
 
-
 </section>
-
 
 
 
@@ -161,63 +152,60 @@ Choose a pathway and discover resources, websites, and learning tools.
 <div class="button-grid">
 
 
-<a href="career.html" class="btn">
+<a class="btn" href="career.html">
 Career Discovery
 </a>
 
 
-<a href="resume.html" class="btn">
+<a class="btn" href="resume.html">
 Resume Support
 </a>
 
 
-<a href="training.html" class="btn">
+<a class="btn" href="training.html">
 Training Programs
 </a>
 
 
-<a href="certifications.html" class="btn">
+<a class="btn" href="certifications.html">
 Certifications
 </a>
 
 
-<a href="technology.html" class="btn">
+<a class="btn" href="technology.html">
 Technology Skills
 </a>
 
 
-<a href="ai-skills.html" class="btn">
+<a class="btn" href="ai-skills.html">
 AI Skills
 </a>
 
 
-<a href="financial.html" class="btn">
+<a class="btn" href="financial.html">
 Financial Growth
 </a>
 
 
-<a href="business.html" class="btn">
+<a class="btn" href="business.html">
 Entrepreneurship
 </a>
 
 
-<a href="communication.html" class="btn">
+<a class="btn" href="communication.html">
 Communication
 </a>
 
 
-<a href="leadership.html" class="btn">
+<a class="btn" href="leadership.html">
 Leadership
 </a>
-
 
 
 </div>
 
 
-
 </section>
-
 
 
 
@@ -233,7 +221,8 @@ Leadership
 
 
 <p>
-Need help deciding your next step? Choose an option below.
+Need help deciding your next step?
+Choose an option below.
 </p>
 
 
@@ -250,7 +239,7 @@ Find A Career
 
 <button 
 class="btn coach-option"
-data-answer="Start with Technology Skills, AI Skills, or Certifications to build career-ready skills."
+data-answer="Technology, AI, and certification programs can help you build skills for future careers."
 >
 Learn A Skill
 </button>
@@ -260,10 +249,11 @@ Learn A Skill
 
 <button 
 class="btn coach-option"
-data-answer="Visit Resume Support and Communication Skills to improve your professional profile."
+data-answer="Resume Support and Communication resources can help strengthen your professional profile."
 >
 Improve My Resume
 </button>
+
 
 
 
@@ -274,7 +264,6 @@ Improve My Resume
 
 
 </section>
-
 
 
 
@@ -294,15 +283,12 @@ Resources are reviewed and updated regularly.
 </p>
 
 
-
 <div id="updateLog">
 
 </div>
 
 
-
 </section>
-
 
 
 
@@ -318,18 +304,16 @@ Resources are reviewed and updated regularly.
 
 
 <p>
-This platform is designed as a growing resource hub. New opportunities, training programs, and tools can be added as they become available.
+Opportunity Platform is a growing resource hub designed to connect people with education, career development, and professional growth opportunities.
 </p>
 
 
 <p>
-The goal is to make career development resources easier to discover and access.
+New resources can be added monthly to keep information current and useful.
 </p>
 
 
-
 </section>
-
 
 
 
@@ -341,15 +325,14 @@ The goal is to make career development resources easier to discover and access.
 
 
 
-
 <footer>
 
 <p>
 Opportunity Platform | Building pathways to growth
 </p>
 
-</footer>
 
+</footer>
 
 
 
@@ -359,7 +342,6 @@ Opportunity Platform | Building pathways to growth
 
 
 </body>
-
 
 </html>
 ```
