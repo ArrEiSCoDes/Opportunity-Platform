@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,14 +23,21 @@
 <h1>🚀 Opportunity Platform</h1>
 
 <p>
-Career resources, certifications, training programs, and growth opportunities to help you build your future.
+Build skills. Discover careers. Create opportunities.
 </p>
+
+<p>
+A resource hub connecting learners, job seekers, and entrepreneurs with training, certifications, and professional growth tools.
+</p>
+
 
 <a href="#resources" class="btn">
 Start Exploring
 </a>
 
+
 </header>
+
 
 
 
@@ -39,13 +47,24 @@ Start Exploring
 
 
 
-<section class="card intro">
 
-<h2>Welcome to Opportunity Platform</h2>
+
+<section class="card">
+
+<h2>
+Welcome to Opportunity Platform
+</h2>
+
 
 <p>
-A resource hub connecting learners, job seekers, and entrepreneurs with opportunities for education, career development, and professional growth.
+Opportunity Platform helps people discover career pathways, education resources, skill-building opportunities, and tools for professional growth.
 </p>
+
+
+<p>
+Explore curated websites, training programs, certifications, and learning resources designed to help you move forward.
+</p>
+
 
 </section>
 
@@ -53,70 +72,48 @@ A resource hub connecting learners, job seekers, and entrepreneurs with opportun
 
 
 
-<section class="card" id="resources">
 
 
-<h2>🌟 Opportunity Spotlight</h2>
+
+<section class="card resource-spotlight" id="resources">
+
+
+<h2>
+🌟 Opportunity Spotlight
+</h2>
+
 
 <p>
-Featured resources and opportunities updated monthly.
+Featured career resources, certifications, and opportunities selected to help you grow.
 </p>
 
 
-<div id="resource-container" class="resource-grid">
+
+<div class="resource-carousel">
 
 
-<div class="resource-placeholder">
+<button class="carousel-btn">
+❮
+</button>
 
-🎓
 
-<h3>
-Free Certifications
-</h3>
+<div class="resource-track" id="resource-container">
 
-<p>
-Career certificates and skill-building programs.
-</p>
+<!-- Spotlight cards will be added here -->
 
 </div>
 
 
-
-<div class="resource-placeholder">
-
-💻
-
-<h3>
-Technology Training
-</h3>
-
-<p>
-IT, cybersecurity, and digital skill opportunities.
-</p>
-
-</div>
-
-
-
-<div class="resource-placeholder">
-
-🤖
-
-<h3>
-AI Skills
-</h3>
-
-<p>
-Resources to learn and use artificial intelligence.
-</p>
-
-</div>
+<button class="carousel-btn">
+❯
+</button>
 
 
 </div>
 
 
 </section>
+
 
 
 
@@ -128,15 +125,50 @@ Resources to learn and use artificial intelligence.
 
 
 <h2>
-Explore Opportunities
+🔎 Search Resources
 </h2>
+
+
+<p>
+Search through career pathways, skills, and opportunities.
+</p>
+
+
+<input 
+type="text"
+id="resourceSearch"
+placeholder="Search resources..."
+>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="card opportunity-section">
+
+
+<h2>
+🚀 Explore Opportunities
+</h2>
+
+
+<p>
+Choose a pathway and discover resources, websites, certifications, and learning tools.
+</p>
+
 
 
 <div class="button-grid">
 
 
 <a class="btn" href="career.html">
-💼 Careers
+💼 Career Discovery
 </a>
 
 
@@ -146,7 +178,17 @@ Explore Opportunities
 
 
 <a class="btn" href="training.html">
-🎓 Training
+🎓 Training & Certifications
+</a>
+
+
+<a class="btn" href="technology.html">
+💻 Technology Skills
+</a>
+
+
+<a class="btn" href="ai-skills.html">
+🤖 AI Skills
 </a>
 
 
@@ -156,12 +198,17 @@ Explore Opportunities
 
 
 <a class="btn" href="business.html">
-🚀 Business
+🚀 Entrepreneurship
+</a>
+
+
+<a class="btn" href="communication.html">
+🗣 Communication Skills
 </a>
 
 
 <a class="btn" href="leadership.html">
-⭐ Leadership
+⭐ Leadership Development
 </a>
 
 
@@ -169,6 +216,7 @@ Explore Opportunities
 
 
 </section>
+
 
 
 
@@ -178,48 +226,48 @@ Explore Opportunities
 
 <section class="card coach">
 
+
 <h2>
 🤖 Opportunity Coach
 </h2>
 
 
 <p>
-Need help deciding your next step? Choose an option below to explore resources.
+Not sure where to start? Choose a pathway and explore resources designed to help you reach your goal.
 </p>
 
 
 
-<div class="coach-buttons">
+<div class="button-grid">
 
 
-<a class="btn coach-option" href="career.html">
-
+<a class="btn" href="career.html">
 🎯 Find A Career
-
 </a>
 
 
-
-<a class="btn coach-option" href="training.html">
-
+<a class="btn" href="training.html">
 📚 Learn A Skill
-
 </a>
 
 
+<a class="btn" href="technology.html">
+💻 Build Technology Skills
+</a>
 
-<a class="btn coach-option" href="resume.html">
 
+<a class="btn" href="ai-skills.html">
+🤖 Learn AI Skills
+</a>
+
+
+<a class="btn" href="resume.html">
 📝 Improve My Resume
-
 </a>
 
 
-
-<a class="btn coach-option" href="business.html">
-
+<a class="btn" href="business.html">
 🚀 Start A Business
-
 </a>
 
 
@@ -228,39 +276,6 @@ Need help deciding your next step? Choose an option below to explore resources.
 
 </section>
 
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-⭐ Monthly Updates
-</h2>
-
-
-<div id="updateLog">
-
-<p>
-✅ New certifications added
-</p>
-
-<p>
-✅ Training resources reviewed
-</p>
-
-<p>
-✅ Career opportunities updated
-</p>
-
-
-</div>
-
-
-</section>
 
 
 
@@ -277,16 +292,19 @@ About Opportunity Platform
 
 
 <p>
-This platform is designed to make career, education, and professional development resources easier to discover.
+Opportunity Platform is designed to make career development, education, and professional growth resources easier to discover.
 </p>
 
 
 <p>
-Resources can be updated monthly as new opportunities become available.
+Resources are organized by category so users can quickly find information that matches their goals.
 </p>
 
 
 </section>
+
+
+
 
 
 
@@ -303,6 +321,7 @@ Resources can be updated monthly as new opportunities become available.
 Opportunity Platform | Building pathways to growth
 </p>
 
+
 </footer>
 
 
@@ -310,6 +329,10 @@ Opportunity Platform | Building pathways to growth
 
 
 
+<script src="./script.js"></script>
+
+
 </body>
 
 </html>
+```
