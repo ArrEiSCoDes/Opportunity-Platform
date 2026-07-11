@@ -13,51 +13,52 @@ const spotlightContainer = document.getElementById(
 
 const spotlightData = [
 
-{
-title: "Career Support",
-category: "💼 Careers",
-description:
-"Explore career pathways, employment resources, and professional growth opportunities.",
-link: "career.html",
-image: "images/career-support.png"
-},
+    {
+        title: "Career Support",
+        category: "💼 Careers",
+        description:
+        "Explore career pathways, employment resources, and professional growth opportunities.",
+        link: "./career.html",
+        image: "./images/career-support.jpg"
+    },
 
-{
-title: "Technology Training",
-category: "💻 Technology",
-description:
-"Learn technology skills, IT training, coding, and cybersecurity resources.",
-link: "technology.html",
-image: "images/technology-training.png"
-},
+    {
+        title: "Technology Training",
+        category: "💻 Technology",
+        description:
+        "Learn technology skills, IT training, coding, and cybersecurity resources.",
+        link: "./technology.html",
+        image: "./images/technology-training.jpg"
+    },
 
-{
-title: "Small Business Resources",
-category: "🚀 Entrepreneurship",
-description:
-"Discover tools for business planning, marketing, and entrepreneurship.",
-link: "business.html",
-image: "images/small-business.png"
-},
+    {
+        title: "Small Business Resources",
+        category: "🚀 Business",
+        description:
+        "Discover tools for business planning, marketing, and entrepreneurship.",
+        link: "./business.html",
+        image: "./images/small-business.jpg"
+    },
 
-{
-title: "Healthcare Benefits",
-category: "💙 Resources",
-description:
-"Find helpful benefit and support resources.",
-link: "financial.html",
-image: "images/healthcare-benefits.png"
-},
+    {
+        title: "Healthcare Benefits",
+        category: "💙 Benefits",
+        description:
+        "Find healthcare support, benefits information, and helpful community resources.",
+        link: "./financial.html",
+        image: "./images/healthcare-benefits.jpg"
+    },
 
-{
-title: "Housing Resources",
-category: "🏠 Community Support",
-description:
-"Explore housing and stability resources.",
-link: "financial.html",
-image: "images/housing-resources.png"
-}
+    {
+        title: "Housing Resources",
+        category: "🏠 Housing",
+        description:
+        "Explore housing support, stability resources, and assistance programs.",
+        link: "./financial.html",
+        image: "./images/housing-resources.jpg"
+    }
 
+];
 ];
 let spotlightIndex = 0;
 
