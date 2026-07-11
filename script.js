@@ -1,59 +1,49 @@
-```javascript
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
 
-/* ============================
+/* ==============================
    OPPORTUNITY SPOTLIGHT
-============================ */
+================================ */
 
 
-const spotlightContainer =
-document.getElementById("resource-container");
-
+const spotlightContainer = document.getElementById("resource-container");
 
 
 const spotlightData = [
 
-
 {
-title:"Google Career Certificates",
-category:"🎓 Training",
-description:"Build career-ready skills through professional certificates and learning programs.",
-link:"./training.html",
-image:"./images/training.jpg"
+title: "Google Career Certificates",
+category: "🎓 Training",
+description: "Build career-ready skills through professional certificates and learning programs.",
+link: "./training.html",
+image: "./images/training.jpg"
 },
 
-
 {
-title:"Resume Support",
-category:"📝 Career",
-description:"Create stronger resumes and prepare for job opportunities.",
-link:"./resume.html",
-image:"./images/resume.jpg"
+title: "Resume Support",
+category: "📝 Career",
+description: "Create stronger resumes and prepare for interviews and applications.",
+link: "./resume.html",
+image: "./images/resume.jpg"
 },
 
-
 {
-title:"Technology Skills",
-category:"💻 Technology",
-description:"Learn IT, cybersecurity, coding, and digital skills.",
-link:"./technology.html",
-image:"./images/technology.jpg"
+title: "Technology Skills",
+category: "💻 Technology",
+description: "Learn IT, cybersecurity, coding, and digital skills.",
+link: "./technology.html",
+image: "./images/technology.jpg"
 },
 
-
 {
-title:"Entrepreneurship",
-category:"🚀 Business",
-description:"Learn business planning, marketing, and startup skills.",
-link:"./business.html",
-image:"./images/business.jpg"
+title: "Entrepreneurship",
+category: "🚀 Business",
+description: "Learn business planning, marketing, and startup skills.",
+link: "./business.html",
+image: "./images/business.jpg"
 }
 
-
 ];
-
-
 
 
 
@@ -61,33 +51,30 @@ let spotlightPosition = 0;
 
 
 
-function displaySpotlight(){
+function displaySpotlight() {
 
 
-if(!spotlightContainer){
+if (!spotlightContainer) {
 return;
 }
 
 
-
-spotlightContainer.innerHTML="";
-
+spotlightContainer.innerHTML = "";
 
 
-for(
+
+for (
 let i = spotlightPosition;
 i < spotlightPosition + 3;
 i++
-){
+) {
 
 
-let item =
-spotlightData[i % spotlightData.length];
+const item = spotlightData[i % spotlightData.length];
 
 
 
 spotlightContainer.innerHTML += `
-
 
 <div class="resource-card">
 
@@ -95,7 +82,7 @@ spotlightContainer.innerHTML += `
 <a href="${item.link}">
 
 
-<img 
+<img
 src="${item.image}"
 alt="${item.title}"
 >
@@ -132,45 +119,50 @@ Explore →
 
 </div>
 
-
 `;
 
 }
 
+}
 
+
+
+displaySpotlight();
+
+
+
+
+
+const nextButton = document.getElementById("nextBtn");
+
+const previousButton = document.getElementById("prevBtn");
+
+
+
+if(nextButton){
+
+nextButton.addEventListener("click", function(){
+
+spotlightPosition++;
+
+if(spotlightPosition >= spotlightData.length){
+
+spotlightPosition = 0;
+
+}
+
+displaySpotlight();
+
+
+});
 
 }
 
 
 
+if(previousButton){
 
-displaySpotlight();
-
-
-
-
-
-document
-.getElementById("nextBtn")
-?.addEventListener(
-"click",
-function(){
-
-spotlightPosition++;
-
-displaySpotlight();
-
-});
-
-
-
-
-
-document
-.getElementById("prevBtn")
-?.addEventListener(
-"click",
-function(){
+previousButton.addEventListener("click", function(){
 
 
 spotlightPosition--;
@@ -178,8 +170,7 @@ spotlightPosition--;
 
 if(spotlightPosition < 0){
 
-spotlightPosition =
-spotlightData.length - 1;
+spotlightPosition = spotlightData.length - 1;
 
 }
 
@@ -189,6 +180,7 @@ displaySpotlight();
 
 });
 
+}
 
 
 
@@ -196,60 +188,92 @@ displaySpotlight();
 
 
 
-/* ============================
-   RESOURCE SEARCH
-============================ */
+/* ==============================
+   SEARCH SYSTEM
+================================ */
+
+
+const searchInput =
+document.getElementById("resourceSearch");
+
+
+const searchButton =
+document.getElementById("searchButton");
 
 
 
-const resources = [
+const searchResources = [
 
 
 {
-name:"Career Discovery",
-keywords:"career jobs employment",
+keywords:[
+"career",
+"job",
+"employment"
+],
 page:"career.html"
 },
 
 
 {
-name:"Resume Support",
-keywords:"resume cv interview job",
+keywords:[
+"resume",
+"cv",
+"interview"
+],
 page:"resume.html"
 },
 
 
 {
-name:"Training Certifications",
-keywords:"training certification education school",
+keywords:[
+"training",
+"certificate",
+"education",
+"school"
+],
 page:"training.html"
 },
 
 
 {
-name:"Technology Skills",
-keywords:"technology IT coding cybersecurity",
+keywords:[
+"technology",
+"computer",
+"IT",
+"cybersecurity",
+"coding"
+],
 page:"technology.html"
 },
 
 
 {
-name:"AI Skills",
-keywords:"AI artificial intelligence",
+keywords:[
+"ai",
+"artificial intelligence"
+],
 page:"ai-skills.html"
 },
 
 
 {
-name:"Financial Growth",
-keywords:"money finance budgeting credit",
+keywords:[
+"money",
+"finance",
+"budget",
+"credit"
+],
 page:"financial.html"
 },
 
 
 {
-name:"Business",
-keywords:"business entrepreneur startup",
+keywords:[
+"business",
+"entrepreneur",
+"startup"
+],
 page:"business.html"
 }
 
@@ -261,30 +285,17 @@ page:"business.html"
 
 
 
-
-const searchInput =
-document.getElementById("resourceSearch");
+function runSearch(){
 
 
-
-const searchButton =
-document.getElementById("searchButton");
+const searchTerm =
+searchInput.value.toLowerCase().trim();
 
 
 
+if(searchTerm === ""){
 
-
-function searchResources(){
-
-
-let search =
-searchInput.value
-.toLowerCase()
-.trim();
-
-
-
-if(search===""){
+alert("Please enter a search term.");
 
 return;
 
@@ -293,13 +304,16 @@ return;
 
 
 
-let result =
-resources.find(resource =>
+const result =
+searchResources.find(resource =>
 
-resource.keywords.includes(search)
 
-||
-resource.name.toLowerCase().includes(search)
+resource.keywords.some(keyword =>
+
+searchTerm.includes(keyword)
+
+)
+
 
 );
 
@@ -307,8 +321,9 @@ resource.name.toLowerCase().includes(search)
 
 if(result){
 
-window.location.href =
-result.page;
+
+window.location.href = result.page;
+
 
 }
 
@@ -316,7 +331,7 @@ else{
 
 
 alert(
-"No matching resource found. Try career, resume, training, technology, AI, or business."
+"No matching resource found. Try career, resume, training, technology, AI, finance, or business."
 );
 
 
@@ -325,6 +340,7 @@ alert(
 
 
 }
+
 
 
 
@@ -335,12 +351,11 @@ if(searchButton){
 
 searchButton.addEventListener(
 "click",
-searchResources
+runSearch
 );
 
 
 }
-
 
 
 
@@ -353,11 +368,9 @@ searchInput.addEventListener(
 function(event){
 
 
-if(event.key==="Enter"){
+if(event.key === "Enter"){
 
-
-searchResources();
-
+runSearch();
 
 }
 
@@ -371,7 +384,4 @@ searchResources();
 
 
 
-
 });
-```
-
