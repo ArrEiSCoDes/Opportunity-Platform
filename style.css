@@ -1,13 +1,16 @@
-```css
-/* ================================
-GLOBAL RESET
-================================ */
+/* ==========================================
+   OPPORTUNITY PLATFORM
+   MAIN STYLESHEET
+========================================== */
+
+
+/* GLOBAL RESET */
 
 * {
 
+box-sizing:border-box;
 margin:0;
 padding:0;
-box-sizing:border-box;
 
 }
 
@@ -15,41 +18,55 @@ box-sizing:border-box;
 
 body {
 
-font-family:Arial, Helvetica, sans-serif;
-background:#eef7ff;
-color:#1f2937;
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:#f8fafc;
+
+color:#1e293b;
+
 line-height:1.6;
 
 }
 
 
 
-
-/* ================================
-HEADER
-================================ */
+/* ==========================================
+   HEADER
+========================================== */
 
 
 .site-header {
 
-background:linear-gradient(
-90deg,
-#67b7ff,
-#173b63
+
+background:
+linear-gradient(
+135deg,
+#173b63,
+#4b1630
 );
 
+
 color:white;
+
+padding:60px 20px;
+
 text-align:center;
-padding:45px 20px;
 
 }
 
 
 
+
 .site-header h1 {
 
-font-size:2.4rem;
+
+font-size:2.8rem;
+
 margin-bottom:15px;
+
 
 }
 
@@ -57,8 +74,25 @@ margin-bottom:15px;
 
 .site-header p {
 
-max-width:750px;
-margin:auto;
+
+max-width:850px;
+
+margin:10px auto;
+
+font-size:1.1rem;
+
+
+}
+
+
+
+.tagline {
+
+
+font-size:1.4rem;
+
+font-weight:bold;
+
 
 }
 
@@ -66,41 +100,46 @@ margin:auto;
 
 
 
-/* ================================
-LAYOUT
-================================ */
+/* ==========================================
+   CONTAINER
+========================================== */
 
 
 .container {
 
-width:90%;
-max-width:1100px;
-margin:35px auto;
 
-display:flex;
-flex-direction:column;
-gap:25px;
+width:90%;
+
+max-width:1200px;
+
+margin:40px auto;
+
 
 }
 
 
 
 
-
-/* ================================
-CARDS
-================================ */
+/* ==========================================
+   GENERAL CARDS
+========================================== */
 
 
 .card {
 
-background:white;
-padding:30px;
 
-border-radius:20px;
+background:white;
+
+border-radius:18px;
+
+padding:35px;
+
+margin-bottom:35px;
 
 box-shadow:
-0 8px 20px rgba(0,0,0,.12);
+0 8px 20px
+rgba(0,0,0,.08);
+
 
 }
 
@@ -108,8 +147,22 @@ box-shadow:
 
 .card h2 {
 
+
 color:#173b63;
+
 margin-bottom:15px;
+
+
+}
+
+
+
+
+.card p {
+
+
+margin-bottom:15px;
+
 
 }
 
@@ -117,32 +170,34 @@ margin-bottom:15px;
 
 
 
-/* ================================
-BUTTONS
-================================ */
+/* ==========================================
+   BUTTONS
+========================================== */
 
 
 .btn {
 
-background:#67b7ff;
+
+display:inline-block;
+
+background:#7f1d3b;
 
 color:white;
 
 padding:12px 22px;
 
-border-radius:12px;
+border-radius:10px;
 
 text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s ease;
 
 border:none;
 
 cursor:pointer;
 
-font-weight:bold;
-
-display:inline-block;
-
-transition:.3s;
 
 }
 
@@ -150,72 +205,120 @@ transition:.3s;
 
 .btn:hover {
 
-background:#2d7fc8;
+
+background:#173b63;
 
 transform:translateY(-2px);
+
 
 }
 
 
+
+
+/* ==========================================
+   BUTTON GRID
+========================================== */
 
 
 .button-grid {
 
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-top:25px;
+
 
 }
 
 
 
+.button-grid .btn {
 
-
-/* ================================
-SPOTLIGHT
-================================ */
-
-
-.resource-spotlight {
 
 text-align:center;
 
+
 }
 
 
 
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+
+.search-box {
+
+
+display:flex;
+
+gap:15px;
+
+margin-top:20px;
+
+
+}
+
+
+
+.search-box input {
+
+
+flex:1;
+
+padding:15px;
+
+border:
+
+2px solid #cbd5e1;
+
+border-radius:10px;
+
+font-size:1rem;
+
+
+}
+
+
+
+.search-box input:focus {
+
+
+outline:none;
+
+border-color:#173b63;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   SPOTLIGHT SECTION
+========================================== */
+
+
 .resource-carousel {
+
 
 display:flex;
 
 align-items:center;
 
-justify-content:center;
-
 gap:15px;
 
-}
+margin-top:25px;
 
-
-
-.carousel-btn {
-
-background:#67b7ff;
-
-color:white;
-
-border:none;
-
-border-radius:50%;
-
-width:45px;
-
-height:45px;
-
-font-size:20px;
-
-cursor:pointer;
 
 }
 
@@ -224,55 +327,93 @@ cursor:pointer;
 
 .resource-track {
 
+
 display:flex;
 
 gap:20px;
 
 overflow:hidden;
 
+width:100%;
+
 justify-content:center;
 
-width:100%;
 
 }
 
 
+
+
+.carousel-btn {
+
+
+background:#173b63;
+
+color:white;
+
+border:none;
+
+font-size:30px;
+
+padding:8px 15px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+transition:.3s;
+
+
+}
+
+
+
+
+.carousel-btn:hover {
+
+
+background:#7f1d3b;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   SPOTLIGHT CARDS
+========================================== */
 
 
 .resource-card {
 
+
 position:relative;
 
-width:260px;
+width:280px;
 
-height:260px;
+height:280px;
 
-border-radius:20px;
+border-radius:18px;
 
 overflow:hidden;
 
-background:#dbeafe;
+flex-shrink:0;
 
 box-shadow:
-0 8px 18px rgba(0,0,0,.15);
+
+0 8px 20px
+rgba(0,0,0,.15);
+
 
 }
 
-
-
-.resource-card img {
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
 
 
 
 .resource-card a {
+
 
 display:block;
 
@@ -282,13 +423,35 @@ text-decoration:none;
 
 color:white;
 
+
+}
+
+
+
+
+.resource-card img {
+
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+
 }
 
 
 
 
 
+
+
+/* Hover information panel */
+
+
 .resource-info {
+
 
 position:absolute;
 
@@ -298,44 +461,82 @@ left:0;
 
 right:0;
 
+
+height:100%;
+
+
+padding:25px;
+
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-end;
+
+
+
 background:
-rgba(23,59,99,.95);
+
+rgba(23,59,99,.92);
+
+
+
+transform:
+
+translateY(70%);
+
+
+
+transition:.4s ease;
+
 
 color:white;
 
-padding:18px;
-
-transform:translateY(100%);
-
-transition:.4s;
 
 }
+
+
+
 
 
 
 .resource-card:hover .resource-info {
 
-transform:translateY(0);
+
+transform:
+
+translateY(0);
+
 
 }
+
+
 
 
 
 .resource-info h3 {
 
+
 color:white;
 
-margin-bottom:8px;
+font-size:1.3rem;
+
+margin-bottom:10px;
+
 
 }
+
 
 
 
 .resource-info p {
 
+
 color:#f8fafc;
 
-font-size:.9rem;
+font-size:.95rem;
+
 
 }
 
@@ -343,11 +544,25 @@ font-size:.9rem;
 
 
 
-.update-note {
+.spotlight-button {
 
-margin-top:20px;
 
-color:#374151;
+background:#7f1d3b;
+
+padding:8px 15px;
+
+border-radius:8px;
+
+display:inline-block;
+
+margin-top:10px;
+
+width:max-content;
+
+color:white;
+
+font-weight:bold;
+
 
 }
 
@@ -355,22 +570,22 @@ color:#374151;
 
 
 
-/* ================================
-SEARCH
-================================ */
+/* ==========================================
+   FOOTER
+========================================== */
 
 
-#resourceSearch {
+footer {
 
-width:100%;
 
-padding:15px;
+background:#173b63;
 
-font-size:16px;
+color:white;
 
-border-radius:15px;
+padding:25px;
 
-border:2px solid #c9dff5;
+text-align:center;
+
 
 }
 
@@ -378,187 +593,87 @@ border:2px solid #c9dff5;
 
 
 
-/* ================================
-COACH
-================================ */
 
 
-.coach-buttons {
+/* ==========================================
+   MOBILE DESIGN
+========================================== */
 
-display:flex;
 
-flex-wrap:wrap;
+@media(max-width:768px){
 
-justify-content:center;
 
-gap:15px;
 
-margin-top:20px;
+.site-header h1 {
+
+
+font-size:2rem;
+
 
 }
 
-
-
-#coachResponse {
-
-margin-top:25px;
-
-padding:20px;
-
-background:#eef7ff;
-
-border-radius:15px;
-
-border-left:6px solid #67b7ff;
-
-}
-
-
-
-#coachResponse p {
-
-color:#173b63;
-
-}
-
-
-
-
-
-/* ================================
-UPDATE LOG
-================================ */
-
-
-#updateLog {
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
-}
-
-
-
-#updateLog p {
-
-background:#f8fafc;
-
-padding:15px;
-
-border-radius:12px;
-
-border-left:5px solid #67b7ff;
-
-}
-
-
-
-
-
-/* ================================
-MOBILE
-================================ */
-
-
-@media(max-width:700px){
 
 
 .container {
 
+
 width:95%;
+
 
 }
 
 
-.button-grid {
+
+.card {
+
+
+padding:25px;
+
+
+}
+
+
+
+.search-box {
+
 
 flex-direction:column;
 
+
+}
+
+
+
+.resource-carousel {
+
+
+flex-direction:column;
+
+
 }
 
 
-.btn {
 
-width:100%;
+.resource-track {
 
-text-align:center;
+
+overflow:hidden;
+
 
 }
+
 
 
 .resource-card {
 
-width:220px;
 
-height:220px;
+width:260px;
 
-}
-
-
-.coach-buttons {
-
-flex-direction:column;
-
-}
-
-
-}
-```
-body {
-    background:red !important;
-}
-.search-box{
-
-display:flex;
-gap:15px;
-margin-top:20px;
-
-}
-
-
-.search-box input{
-
-flex:1;
-
-}
-
-
-
-@media(max-width:700px){
-
-.search-box{
-
-flex-direction:column;
-
-}
-
-}
-.resource-track{
-
-display:flex;
-gap:20px;
-overflow:hidden;
-justify-content:center;
-
-}
-
-
-.resource-card{
-
-min-width:260px;
 height:260px;
+
+
 }
 
 
-.resource-info{
-
-transform:translateY(0);
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
 
 }
