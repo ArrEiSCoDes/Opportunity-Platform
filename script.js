@@ -1,5 +1,137 @@
 document.addEventListener("DOMContentLoaded", function () {
+/* ==========================
+OPPORTUNITY SPOTLIGHT
+========================== */
 
+
+const spotlightContainer =
+document.getElementById("resource-container");
+
+
+
+const spotlightData = [
+
+
+{
+title:"Career Support",
+category:"💼 Careers",
+description:
+"Explore job resources, career pathways, and employment opportunities.",
+link:"career.html",
+image:"images/career-support.jpg"
+},
+
+
+
+{
+title:"Technology Training",
+category:"💻 Technology",
+description:
+"Build IT skills, coding knowledge, and cybersecurity experience.",
+link:"technology.html",
+image:"images/technology-training.jpg"
+},
+
+
+
+{
+title:"Small Business",
+category:"🚀 Entrepreneurship",
+description:
+"Learn business planning, marketing, and startup skills.",
+link:"business.html",
+image:"images/small-business.jpg"
+},
+
+
+
+{
+title:"Healthcare Benefits",
+category:"🏥 Support",
+description:
+"Find healthcare programs and benefit resources.",
+link:"financial.html",
+image:"images/healthcare-benefits.jpg"
+},
+
+
+
+{
+title:"Housing Resources",
+category:"🏠 Community",
+description:
+"Explore housing support options.",
+link:"financial.html",
+image:"images/housing-resources.jpg"
+}
+
+
+];
+
+
+
+
+if(spotlightContainer){
+
+
+spotlightData.forEach(item => {
+
+
+spotlightContainer.innerHTML += `
+
+
+<div class="resource-card">
+
+
+<img
+
+src="${item.image}"
+
+alt="${item.title}"
+
+>
+
+
+<div class="resource-info">
+
+
+<h3>
+${item.category}
+</h3>
+
+
+<h4>
+${item.title}
+</h4>
+
+
+<p>
+${item.description}
+</p>
+
+
+
+<a href="${item.link}" class="spotlight-button">
+
+Explore
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+}
 
 /* ==========================
 OPPORTUNITY SPOTLIGHT
