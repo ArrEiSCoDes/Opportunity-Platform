@@ -1,244 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ================================
+AI Spotlight Readability Fix
+================================ */
 
-<head>
+.resource-card a,
+.resource-card a:hover {
+    color: #ffffff;
+}
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Opportunity Platform</title>
+.resource-info {
+    background: rgba(23, 59, 99, 0.95) !important;
+    color: #ffffff !important;
+}
 
-<link rel="stylesheet" href="style.css">
 
-</head>
+.resource-info h3 {
+    color: #ffffff !important;
+}
 
 
-<body>
+.resource-info p {
+    color: #f8fafc !important;
+}
 
 
-<header class="site-header">
-
-
-<h1>
-Opportunity Platform
-</h1>
-
-
-<p>
-Connecting individuals with career resources, training opportunities,
-and pathways toward growth.
-</p>
-
-
-<button id="startButton" class="btn">
-Start Exploring Opportunities
-</button>
-
-
-</header>
-
-
-
-
-
-<main class="container">
-
-
-
-<section class="card">
-
-
-<h2>
-Welcome to the Opportunity Platform
-</h2>
-
-
-<p>
-The Opportunity Platform helps individuals discover workforce resources,
-career development tools, education opportunities, financial resources,
-and professional growth pathways.
-</p>
-
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card" id="resources">
-
-
-<h2>
-Explore Opportunities
-</h2>
-
-
-
-<div class="button-grid">
-
-
-<a href="career.html" class="btn">
-Career Opportunities
-</a>
-
-
-<a href="resume.html" class="btn">
-Resume Support
-</a>
-
-
-<a href="training.html" class="btn">
-Training Programs
-</a>
-
-
-<a href="financial.html" class="btn">
-Financial Resources
-</a>
-
-
-<a href="business.html" class="btn">
-Business Support
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-Who This Platform Supports
-</h2>
-
-
-<p>
-This platform is designed for anyone looking for opportunities,
-including job seekers, career changers, students, professionals,
-and individuals looking for training or workforce resources.
-</p>
-
-
-<p>
-Unlike the Single Parent Career Hub, this platform focuses on general
-career growth and resource navigation for a broader audience.
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-Opportunity Resource Finder
-</h2>
-
-
-<p>
-Not sure where to start?
-
-Complete this resource finder and we will help identify career,
-training, education, financial, and professional development
-opportunities that align with your goals, experience, and interests.
-</p>
-
-
-<p>
-Your answers help us narrow down resources that may be the best fit
-for your current career journey. You may remain anonymous, and your
-email is only used to provide follow-up resources and support.
-</p>
-
-
-
-
-<div class="form-container">
-
-
-<iframe 
-src="https://docs.google.com/forms/d/e/1FAIpQLSduF5kJ2dOmVLRyAhH1lKmp-Ixgyg_89IiSYjDU8TZ-wQc0IQ/viewform?embedded=true"
-width="100%"
-height="2086"
-frameborder="0"
-marginheight="0"
-marginwidth="0">
-
-Loading…
-
-</iframe>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-Are You Looking for Parent-Focused Support?
-</h2>
-
-
-<p>
-If you are a parent searching for opportunities that consider childcare,
-family responsibilities, flexible schedules, or balancing work and home life,
-the Single Parent Career Hub was created specifically for those needs.
-</p>
-
-
-
-<a 
-href="https://arreiscodes.github.io/Single-Parent-Career-Hub/"
-class="btn">
-
-Visit Single Parent Career Hub
-
-</a>
-
-
-
-</section>
-
-
-
-
-
-</main>
-
-
-
-
-<script src="js/script.js"></script>
-
-
-</body>
-
-</html>
+/* Make sure images don't affect text visibility */
+.resource-card img {
+    filter: brightness(0.85);
+}
