@@ -162,7 +162,7 @@ displayResources();
 
 
 
-// SEARCH FEATURE
+// RESOURCE SEARCH FEATURE
 
 
 const searchButton =
@@ -179,15 +179,111 @@ searchButton?.addEventListener(
 function(){
 
 
-let value =
-searchInput.value.toLowerCase();
+const searchTerm =
+searchInput.value.toLowerCase().trim();
 
 
 
-alert(
-"Searching resources for: " 
-+ value
+const results =
+resources.filter(resource =>
+
+resource.title.toLowerCase().includes(searchTerm) ||
+
+resource.category.toLowerCase().includes(searchTerm) ||
+
+resource.description.toLowerCase().includes(searchTerm)
+
 );
+
+
+
+container.innerHTML = "";
+
+
+
+if(results.length === 0){
+
+
+container.innerHTML = `
+
+<div class="resource-card">
+
+<div class="resource-info"
+style="transform:translateY(0);">
+
+<h3>
+No Resources Found
+</h3>
+
+<p>
+Try searching:
+career, training, technology, AI, business
+</p>
+
+
+</div>
+
+</div>
+
+`;
+
+
+return;
+
+
+}
+
+
+
+results.forEach(resource => {
+
+
+
+let card =
+document.createElement("div");
+
+card.className="resource-card";
+
+
+
+card.innerHTML = `
+
+<a href="${resource.link}">
+
+<img src="${resource.image}">
+
+
+<div class="resource-info"
+style="transform:translateY(0);">
+
+
+<h3>
+${resource.title}
+</h3>
+
+
+<p>
+${resource.category}
+</p>
+
+
+<p>
+${resource.description}
+</p>
+
+
+</div>
+
+</a>
+
+`;
+
+
+container.appendChild(card);
+
+
+
+});
 
 
 });
