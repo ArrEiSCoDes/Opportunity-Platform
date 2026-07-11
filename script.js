@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-/* ==============================
+/* ============================
    OPPORTUNITY SPOTLIGHT
-================================ */
+============================ */
 
 
 const spotlightContainer = document.getElementById("resource-container");
@@ -11,40 +11,39 @@ const spotlightContainer = document.getElementById("resource-container");
 
 const spotlightData = [
 
-{
-title: "Google Career Certificates",
-category: "🎓 Training",
-description: "Build career-ready skills through professional certificates and learning programs.",
-link: "./training.html",
-image: "./images/training.jpg"
-},
+    {
+        title: "Google Career Certificates",
+        category: "🎓 Training",
+        description: "Build career-ready skills through professional certificates and learning programs.",
+        link: "./training.html",
+        image: "./images/training.jpg"
+    },
 
-{
-title: "Resume Support",
-category: "📝 Career",
-description: "Create stronger resumes and prepare for interviews and applications.",
-link: "./resume.html",
-image: "./images/resume.jpg"
-},
+    {
+        title: "Resume Support",
+        category: "📝 Career",
+        description: "Create stronger resumes and prepare for interviews and applications.",
+        link: "./resume.html",
+        image: "./images/resume.jpg"
+    },
 
-{
-title: "Technology Skills",
-category: "💻 Technology",
-description: "Learn IT, cybersecurity, coding, and digital skills.",
-link: "./technology.html",
-image: "./images/technology.jpg"
-},
+    {
+        title: "Technology Skills",
+        category: "💻 Technology",
+        description: "Learn IT, cybersecurity, coding, and digital skills.",
+        link: "./technology.html",
+        image: "./images/technology.jpg"
+    },
 
-{
-title: "Entrepreneurship",
-category: "🚀 Business",
-description: "Learn business planning, marketing, and startup skills.",
-link: "./business.html",
-image: "./images/business.jpg"
-}
+    {
+        title: "Entrepreneurship",
+        category: "🚀 Business",
+        description: "Learn business planning, marketing, and startup skills.",
+        link: "./business.html",
+        image: "./images/business.jpg"
+    }
 
 ];
-
 
 
 let spotlightPosition = 0;
@@ -54,74 +53,62 @@ let spotlightPosition = 0;
 function displaySpotlight() {
 
 
-if (!spotlightContainer) {
-return;
-}
+    if (!spotlightContainer) {
+        return;
+    }
 
 
-spotlightContainer.innerHTML = "";
+    spotlightContainer.innerHTML = "";
 
 
-
-for (
-let i = spotlightPosition;
-i < spotlightPosition + 3;
-i++
-) {
-
-
-const item = spotlightData[i % spotlightData.length];
+    for (
+        let i = spotlightPosition;
+        i < spotlightPosition + 3;
+        i++
+    ) {
 
 
-
-spotlightContainer.innerHTML += `
-
-<div class="resource-card">
+        const item = spotlightData[i % spotlightData.length];
 
 
-<a href="${item.link}">
+        spotlightContainer.innerHTML += `
 
+        <div class="resource-card">
 
-<img
-src="${item.image}"
-alt="${item.title}"
->
+            <a href="${item.link}">
 
+                <img 
+                src="${item.image}" 
+                alt="${item.title}"
+                >
 
-<div class="resource-info">
+                <div class="resource-info">
 
+                    <h3>
+                    ${item.title}
+                    </h3>
 
-<h3>
-${item.title}
-</h3>
+                    <p>
+                    ${item.category}
+                    </p>
 
+                    <p>
+                    ${item.description}
+                    </p>
 
-<p>
-${item.category}
-</p>
+                    <span class="btn">
+                    Explore →
+                    </span>
 
+                </div>
 
-<p>
-${item.description}
-</p>
+            </a>
 
+        </div>
 
-<span class="btn">
-Explore →
-</span>
+        `;
 
-
-</div>
-
-
-</a>
-
-
-</div>
-
-`;
-
-}
+    }
 
 }
 
@@ -139,58 +126,66 @@ const previousButton = document.getElementById("prevBtn");
 
 
 
-if(nextButton){
-
-nextButton.addEventListener("click", function(){
-
-spotlightPosition++;
-
-if(spotlightPosition >= spotlightData.length){
-
-spotlightPosition = 0;
-
-}
-
-displaySpotlight();
+if (nextButton) {
 
 
-});
-
-}
+    nextButton.addEventListener("click", function () {
 
 
-
-if(previousButton){
-
-previousButton.addEventListener("click", function(){
+        spotlightPosition++;
 
 
-spotlightPosition--;
+        if (spotlightPosition >= spotlightData.length) {
+
+            spotlightPosition = 0;
+
+        }
 
 
-if(spotlightPosition < 0){
-
-spotlightPosition = spotlightData.length - 1;
-
-}
+        displaySpotlight();
 
 
-displaySpotlight();
+    });
 
-
-});
 
 }
 
 
 
 
+if (previousButton) {
+
+
+    previousButton.addEventListener("click", function () {
+
+
+        spotlightPosition--;
+
+
+        if (spotlightPosition < 0) {
+
+            spotlightPosition = spotlightData.length - 1;
+
+        }
+
+
+        displaySpotlight();
+
+
+    });
+
+
+}
 
 
 
-/* ==============================
-   SEARCH SYSTEM
-================================ */
+
+
+
+
+/* ============================
+   RESOURCE SEARCH
+============================ */
 
 
 const searchInput =
@@ -204,79 +199,40 @@ document.getElementById("searchButton");
 
 const searchResources = [
 
+    {
+        keywords:["career","job","employment"],
+        page:"career.html"
+    },
 
-{
-keywords:[
-"career",
-"job",
-"employment"
-],
-page:"career.html"
-},
+    {
+        keywords:["resume","cv","interview"],
+        page:"resume.html"
+    },
 
+    {
+        keywords:["training","certificate","education"],
+        page:"training.html"
+    },
 
-{
-keywords:[
-"resume",
-"cv",
-"interview"
-],
-page:"resume.html"
-},
+    {
+        keywords:["technology","computer","coding","cybersecurity"],
+        page:"technology.html"
+    },
 
+    {
+        keywords:["ai","artificial intelligence"],
+        page:"ai-skills.html"
+    },
 
-{
-keywords:[
-"training",
-"certificate",
-"education",
-"school"
-],
-page:"training.html"
-},
+    {
+        keywords:["finance","money","budget","credit"],
+        page:"financial.html"
+    },
 
-
-{
-keywords:[
-"technology",
-"computer",
-"IT",
-"cybersecurity",
-"coding"
-],
-page:"technology.html"
-},
-
-
-{
-keywords:[
-"ai",
-"artificial intelligence"
-],
-page:"ai-skills.html"
-},
-
-
-{
-keywords:[
-"money",
-"finance",
-"budget",
-"credit"
-],
-page:"financial.html"
-},
-
-
-{
-keywords:[
-"business",
-"entrepreneur",
-"startup"
-],
-page:"business.html"
-}
-
+    {
+        keywords:["business","entrepreneur","startup"],
+        page:"business.html"
+    }
 
 ];
 
@@ -284,59 +240,56 @@ page:"business.html"
 
 
 
-
-function runSearch(){
-
-
-const searchTerm =
-searchInput.value.toLowerCase().trim();
+function runSearch() {
 
 
-
-if(searchTerm === ""){
-
-alert("Please enter a search term.");
-
-return;
-
-}
+    const searchTerm =
+    searchInput.value.toLowerCase().trim();
 
 
 
+    if (searchTerm === "") {
 
-const result =
-searchResources.find(resource =>
+        alert("Please enter a search term.");
 
+        return;
 
-resource.keywords.some(keyword =>
-
-searchTerm.includes(keyword)
-
-)
-
-
-);
+    }
 
 
 
-if(result){
+
+    const result =
+    searchResources.find(resource =>
 
 
-window.location.href = result.page;
+        resource.keywords.some(keyword =>
+
+            searchTerm.includes(keyword)
+
+        )
+
+    );
 
 
-}
-
-else{
 
 
-alert(
-"No matching resource found. Try career, resume, training, technology, AI, finance, or business."
-);
+
+    if (result) {
 
 
-}
+        window.location.href = result.page;
 
+
+    } else {
+
+
+        alert(
+        "No matching resource found. Try career, resume, training, technology, AI, finance, or business."
+        );
+
+
+    }
 
 
 }
@@ -345,42 +298,40 @@ alert(
 
 
 
-
-if(searchButton){
-
-
-searchButton.addEventListener(
-"click",
-runSearch
-);
+if (searchButton) {
 
 
-}
-
-
-
-
-if(searchInput){
-
-
-searchInput.addEventListener(
-"keypress",
-function(event){
-
-
-if(event.key === "Enter"){
-
-runSearch();
-
-}
-
-
-});
+    searchButton.addEventListener(
+        "click",
+        runSearch
+    );
 
 
 }
 
 
+
+
+if (searchInput) {
+
+
+    searchInput.addEventListener(
+        "keypress",
+        function(event){
+
+
+            if(event.key === "Enter") {
+
+                runSearch();
+
+            }
+
+
+        }
+    );
+
+
+}
 
 
 
