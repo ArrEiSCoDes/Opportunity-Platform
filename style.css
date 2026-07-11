@@ -327,3 +327,299 @@ footer {
 
 }
 ```
+/* ===================================
+OPPORTUNITY PLATFORM UPGRADES
+=================================== */
+
+
+/* Search Box */
+
+#resourceSearch {
+
+width:100%;
+
+padding:15px;
+
+font-size:16px;
+
+border-radius:15px;
+
+border:2px solid #c9dff5;
+
+margin-top:15px;
+
+}
+
+
+/* Opportunity Coach */
+
+#coachResponse {
+
+margin-top:25px;
+
+padding:20px;
+
+border-radius:15px;
+
+background:#eef7ff;
+
+border-left:6px solid #67b7ff;
+
+min-height:50px;
+
+}
+
+
+#coachResponse h3 {
+
+color:#173b63;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+.coach-option {
+
+margin:8px;
+
+}
+
+
+
+
+
+/* Update Log */
+
+#updateLog {
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+
+
+#updateLog p {
+
+background:#f8fafc;
+
+padding:15px;
+
+border-radius:12px;
+
+border-left:5px solid #67b7ff;
+
+margin:0;
+
+}
+
+
+
+
+
+/* ===================================
+RESOURCE LIBRARY CARDS
+=================================== */
+
+
+.resource-grid {
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:20px;
+
+}
+
+
+
+.library-card {
+
+background:#ffffff;
+
+border-radius:18px;
+
+padding:25px;
+
+box-shadow:0 8px 18px rgba(0,0,0,.12);
+
+transition:.3s ease;
+
+}
+
+
+
+.library-card:hover {
+
+transform:translateY(-5px);
+
+}
+
+
+
+.library-card h3 {
+
+color:#173b63;
+
+margin-bottom:12px;
+
+}
+
+
+
+.library-card p {
+
+color:#374151;
+
+}
+
+
+
+
+
+.library-card .btn {
+
+margin-top:10px;
+
+margin-right:8px;
+
+}
+
+
+
+
+
+/* ===================================
+RESOURCE SPOTLIGHT IMPROVEMENT
+=================================== */
+
+
+.resource-card {
+
+position:relative;
+
+width:260px;
+
+height:260px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:#dbeafe;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+
+
+.resource-card img {
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+
+
+.resource-info {
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+right:0;
+
+background:rgba(23,59,99,.92);
+
+color:white;
+
+padding:18px;
+
+transform:translateY(100%);
+
+transition:.4s ease;
+
+}
+
+
+
+.resource-card:hover .resource-info {
+
+transform:translateY(0);
+
+}
+
+
+
+.resource-info h3 {
+
+color:white;
+
+margin-bottom:8px;
+
+}
+
+
+
+.resource-info p {
+
+color:#f8fafc;
+
+}
+
+
+
+
+
+/* ===================================
+MOBILE DESIGN
+=================================== */
+
+
+@media(max-width:700px){
+
+
+.resource-card {
+
+width:220px;
+
+height:220px;
+
+}
+
+
+.coach-option {
+
+width:100%;
+
+margin:5px 0;
+
+}
+
+
+.library-card {
+
+padding:20px;
+
+}
+
+
+}
