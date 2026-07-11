@@ -16,21 +16,24 @@ const spotlightData = [
 title:"Google Career Certificates",
 category:"Training",
 description:"Build career-ready skills with professional certificates.",
-link:"training.html"
+link:"training.html",
+image:"images/training.jpg"
 },
 
 {
 title:"Resume Support",
 category:"Career",
 description:"Improve resumes and prepare for job opportunities.",
-link:"resume.html"
+link:"resume.html",
+image:"images/resume.jpg"
 },
 
 {
 title:"Technology Skills",
 category:"Technology",
 description:"Learn digital skills, IT, and cybersecurity.",
-link:"technology.html"
+link:"technology.html",
+image:"images/technology.jpg"
 }
 
 ];
