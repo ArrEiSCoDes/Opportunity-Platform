@@ -2,13 +2,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 /* ==========================
-OPPORTUNITY SPOTLIGHT
+OPPORTUNITY SPOTLIGHT CAROUSEL
 ========================== */
 
 
 const spotlightContainer =
 document.getElementById("resource-container");
+
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+
+const nextBtn =
+document.getElementById("nextBtn");
 
 
 
@@ -19,7 +29,7 @@ const spotlightData = [
 title:"Career Support",
 category:"💼 Careers",
 description:
-"Explore job resources, career pathways, and employment opportunities.",
+"Explore jobs, career pathways, and employment resources.",
 link:"career.html",
 image:"images/career-support.jpg"
 },
@@ -39,9 +49,9 @@ image:"images/technology-training.jpg"
 
 {
 title:"Small Business",
-category:"🚀 Entrepreneurship",
+category:"🚀 Business",
 description:
-"Learn business planning, marketing, and startup skills.",
+"Learn entrepreneurship, planning, and business growth skills.",
 link:"business.html",
 image:"images/small-business.jpg"
 },
@@ -50,9 +60,9 @@ image:"images/small-business.jpg"
 
 {
 title:"Healthcare Benefits",
-category:"🏥 Support",
+category:"🏥 Benefits",
 description:
-"Find healthcare programs and important benefit resources.",
+"Find healthcare programs and important support resources.",
 link:"financial.html",
 image:"images/healthcare-benefits.jpg"
 },
@@ -61,9 +71,9 @@ image:"images/healthcare-benefits.jpg"
 
 {
 title:"Housing Resources",
-category:"🏠 Community",
+category:"🏠 Housing",
 description:
-"Explore housing support and stability resources.",
+"Explore housing assistance and stability resources.",
 link:"financial.html",
 image:"images/housing-resources.jpg"
 }
@@ -74,12 +84,10 @@ image:"images/housing-resources.jpg"
 
 
 
-
 if(spotlightContainer){
 
 
 spotlightData.forEach(item => {
-
 
 
 spotlightContainer.innerHTML += `
@@ -88,67 +96,77 @@ spotlightContainer.innerHTML += `
 <div class="resource-card">
 
 
-
-<img
-
-src="${item.image}"
-
-alt="${item.title}"
-
->
+<img src="${item.image}" alt="${item.title}">
 
 
 
 <div class="resource-info">
 
 
-
 <h3>
-
 ${item.category}
-
 </h3>
 
 
-
 <h4>
-
 ${item.title}
-
 </h4>
 
 
-
 <p>
-
 ${item.description}
-
 </p>
 
 
-
-<a
-
-href="${item.link}"
-
-class="spotlight-button">
+<a href="${item.link}" class="spotlight-button">
 
 Explore
 
 </a>
 
 
-
 </div>
 
 
-
 </div>
-
 
 
 `;
 
+
+});
+
+}
+
+
+
+
+const cardWidth = 300;
+
+
+
+if(nextBtn){
+
+nextBtn.addEventListener("click",()=>{
+
+
+spotlightContainer.scrollLeft += cardWidth;
+
+
+});
+
+
+}
+
+
+
+
+if(prevBtn){
+
+prevBtn.addEventListener("click",()=>{
+
+
+spotlightContainer.scrollLeft -= cardWidth;
 
 
 });
